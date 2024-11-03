@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct InvestSightApp: App {
+    @StateObject private var container = AppContainer()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(viewModel: container.portfolioViewModel)
         }
     }
 }
