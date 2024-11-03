@@ -9,45 +9,89 @@ import SwiftUI
 
 struct ContentView: View {
     @StateObject private var viewModel: PortfolioViewModel
+    @State private var scrollOffset: CGFloat = 0
     
     init(viewModel: PortfolioViewModel) {
         _viewModel = StateObject(wrappedValue: viewModel)
     }
     
     var body: some View {
-        VStack {
-            if viewModel.isLoading {
-                ProgressView()
-                Text("Loading portfolio...")
-            } else if let portfolio = viewModel.portfolio {
-                Text("Portfolio Value")
-                    .font(.headline)
-                Text("€\(portfolio.totalValue.formatted())")
-                    .font(.title)
-                    .bold()
+        NavigationView {
+            ScrollView {
+                GeometryReader { geometry in
+                    let offset = -geometry.frame(in: .named("scroll")).minY
+                    Color.clear.preference(
+                        key: ScrollOffsetPreferenceKey.self,
+                        value: offset
+                    )
+                }
+                .frame(height: 0)
                 
-                if portfolio.unrealizedProfitLoss >= 0 {
-                    Text("+€\(portfolio.unrealizedProfitLoss.formatted())")
-                        .foregroundColor(.green)
+                if viewModel.isLoading {
+                    ProgressView("Loading portfolio...")
+                        .padding()
+                } else if let error = viewModel.error {
+                    VStack {
+                        Text("Error loading portfolio")
+                            .font(.headline)
+                        Text(error.localizedDescription)
+                            .foregroundColor(.red)
+                        Button("Retry") {
+                            Task {
+                                await viewModel.loadPortfolio()
+                            }
+                        }
+                        .padding()
+                    }
                 } else {
-                    Text("-€\(abs(portfolio.unrealizedProfitLoss).formatted())")
-                        .foregroundColor(.red)
+                    VStack {
+                        if let portfolio = viewModel.portfolio {
+                            PortfolioGraphView(portfolio: portfolio)
+                        }
+                        PortfolioContent(portfolio: viewModel.portfolio)
+                    }
+                    .refreshable {
+                        await viewModel.loadPortfolio()
+                    }
                 }
-            } else if let error = viewModel.error {
-                VStack(spacing: 10) {
-                    Text("Error loading portfolio")
+                
+                // Add this temporarily for debugging
+                Text("Scroll offset: \(scrollOffset)")
+                    .padding()
+            }
+            .coordinateSpace(name: "scroll")
+            .onPreferenceChange(ScrollOffsetPreferenceKey.self) { offset in
+                scrollOffset = offset
+            }
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Text("Portfolio")
                         .font(.headline)
-                    Text(error.localizedDescription)
-                        .foregroundColor(.red)
                 }
-            } else {
-                Text("No portfolio data available")
+                ToolbarItem(placement: .principal) {
+                    if scrollOffset > 200, let portfolio = viewModel.portfolio {
+                        PortfolioHeaderView(portfolio: portfolio)
+                            .transition(.opacity)
+                            .animation(.easeInOut, value: scrollOffset)
+                    }
+                }
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    BrokerStatusView(isConnected: true)
+                }
             }
         }
-        .padding()
         .task {
-            await viewModel.loadPortfolio()
+            if viewModel.portfolio == nil {
+                await viewModel.loadPortfolio()
+            }
         }
+    }
+}
+
+struct ScrollOffsetPreferenceKey: PreferenceKey {
+    static var defaultValue: CGFloat = 0
+    static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) {
+        value = nextValue()
     }
 }
 

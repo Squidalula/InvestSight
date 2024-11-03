@@ -3,6 +3,7 @@ import Foundation
 @MainActor
 final class PortfolioViewModel: ObservableObject {
     private let trading212Service: Trading212ServiceProtocol
+    private var currentTask: Task<Void, Never>?
     
     @Published private(set) var portfolio: Portfolio?
     @Published private(set) var isLoading = false
@@ -13,26 +14,42 @@ final class PortfolioViewModel: ObservableObject {
     }
     
     func loadPortfolio() async {
-        await MainActor.run {
-            isLoading = true
-            error = nil
-        }
+        // Cancel any existing task
+        currentTask?.cancel()
         
-        do {
-            let t212Portfolio = try await trading212Service.fetchPortfolio()
-            let t212Stocks = try await trading212Service.fetchStocks()
-            let stocks = t212Stocks.map { $0.toDomain() }
-            let domainPortfolio = t212Portfolio.toDomain(with: stocks)
+        currentTask = Task {
+            guard !Task.isCancelled else { return }
             
             await MainActor.run {
-                self.portfolio = domainPortfolio
-                self.isLoading = false
+                isLoading = true
+                error = nil
             }
-        } catch {
-            await MainActor.run {
-                self.error = error
-                self.isLoading = false
+            
+            do {
+                let t212Portfolio = try await trading212Service.fetchPortfolio()
+                guard !Task.isCancelled else { return }
+                
+                let t212Stocks = try await trading212Service.fetchStocks()
+                guard !Task.isCancelled else { return }
+                
+                let stocks = t212Stocks.map { $0.toDomain() }
+                let domainPortfolio = t212Portfolio.toDomain(with: stocks)
+                
+                await MainActor.run {
+                    self.portfolio = domainPortfolio
+                    self.isLoading = false
+                    self.error = nil
+                }
+            } catch {
+                guard !Task.isCancelled else { return }
+                
+                await MainActor.run {
+                    self.error = error
+                    self.isLoading = false
+                }
             }
         }
+        
+        await currentTask?.value
     }
 } 
