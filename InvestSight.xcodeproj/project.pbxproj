@@ -45,6 +45,28 @@
 		B79FAB5A2CD6DE2700DFAC63 /* Trading212Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79FAB592CD6DE2700DFAC63 /* Trading212Endpoint.swift */; };
 		B79FAB5C2CD6DF2C00DFAC63 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79FAB5B2CD6DF2C00DFAC63 /* HTTPMethod.swift */; };
 		B79FAB602CD6E0A900DFAC63 /* PortfolioViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79FAB5D2CD6E0A900DFAC63 /* PortfolioViewModel.swift */; };
+		B79FAB632CD7D9FB00DFAC63 /* Color+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79FAB612CD7D9FB00DFAC63 /* Color+Hex.swift */; };
+		B79FAB682CD7DA1A00DFAC63 /* BrokerStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79FAB642CD7DA1900DFAC63 /* BrokerStatusView.swift */; };
+		B79FAB692CD7DA1A00DFAC63 /* StockRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79FAB652CD7DA1900DFAC63 /* StockRowView.swift */; };
+		B79FAB6C2CD7EB4700DFAC63 /* RefreshableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79FAB6A2CD7EB4700DFAC63 /* RefreshableView.swift */; };
+		B79FAB6E2CD7EB6E00DFAC63 /* PortfolioContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79FAB6D2CD7EB6E00DFAC63 /* PortfolioContent.swift */; };
+		B79FAB702CD7F34000DFAC63 /* PortfolioHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79FAB6F2CD7F34000DFAC63 /* PortfolioHeaderView.swift */; };
+		B79FAB722CD7F35700DFAC63 /* PortfolioGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79FAB712CD7F35600DFAC63 /* PortfolioGraphView.swift */; };
+		B7B0E1832CDFACD400E107B0 /* StockCacheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B0E1802CDFACD300E107B0 /* StockCacheService.swift */; };
+		B7B0E1882CDFE6CA00E107B0 /* PortfolioMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B0E1862CDFE6CA00E107B0 /* PortfolioMainView.swift */; };
+		B7B0E18F2CDFE6F400E107B0 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B0E18C2CDFE6F400E107B0 /* SettingsView.swift */; };
+		B7B0E1912CDFE70300E107B0 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B0E1902CDFE70300E107B0 /* ErrorView.swift */; };
+		B7B0E1952CDFEA4500E107B0 /* ScrollOffsetPreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B0E1922CDFEA4500E107B0 /* ScrollOffsetPreferenceKey.swift */; };
+		B7B0E1992CE0DEFB00E107B0 /* PortfolioToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B0E1982CE0DEFA00E107B0 /* PortfolioToolbar.swift */; };
+		B7B0E19C2CE0E08B00E107B0 /* PortfolioState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B0E19A2CE0E08B00E107B0 /* PortfolioState.swift */; };
+		B7B0E19F2CE0E0A900E107B0 /* DateProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B0E19D2CE0E0A900E107B0 /* DateProviding.swift */; };
+		B7B0E1A32CE0E54800E107B0 /* PortfolioHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B0E1A22CE0E54800E107B0 /* PortfolioHistory.swift */; };
+		B7B0E1A52CE0E56500E107B0 /* PortfolioHistoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B0E1A42CE0E56500E107B0 /* PortfolioHistoryService.swift */; };
+		B7B0E1A72CE0E95800E107B0 /* Date+Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B0E1A62CE0E95800E107B0 /* Date+Components.swift */; };
+		B7B0E1A92CE0E9C300E107B0 /* PortfolioGraphViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B0E1A82CE0E9C300E107B0 /* PortfolioGraphViewModel.swift */; };
+		B7B0E1AB2CE0F11900E107B0 /* PortfolioRefreshable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B0E1AA2CE0F11900E107B0 /* PortfolioRefreshable.swift */; };
+		B7B0E1B32CE0F3C400E107B0 /* PreviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B0E1B22CE0F3C400E107B0 /* PreviewData.swift */; };
+		B7B0E1B52CE10CB800E107B0 /* BackgroundTaskService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B0E1B42CE10CB800E107B0 /* BackgroundTaskService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,6 +142,29 @@
 		B79FAB592CD6DE2700DFAC63 /* Trading212Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trading212Endpoint.swift; sourceTree = "<group>"; };
 		B79FAB5B2CD6DF2C00DFAC63 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		B79FAB5D2CD6E0A900DFAC63 /* PortfolioViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortfolioViewModel.swift; sourceTree = "<group>"; };
+		B79FAB612CD7D9FB00DFAC63 /* Color+Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color+Hex.swift"; sourceTree = "<group>"; };
+		B79FAB642CD7DA1900DFAC63 /* BrokerStatusView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrokerStatusView.swift; sourceTree = "<group>"; };
+		B79FAB652CD7DA1900DFAC63 /* StockRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StockRowView.swift; sourceTree = "<group>"; };
+		B79FAB6A2CD7EB4700DFAC63 /* RefreshableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshableView.swift; sourceTree = "<group>"; };
+		B79FAB6D2CD7EB6E00DFAC63 /* PortfolioContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortfolioContent.swift; sourceTree = "<group>"; };
+		B79FAB6F2CD7F34000DFAC63 /* PortfolioHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortfolioHeaderView.swift; sourceTree = "<group>"; };
+		B79FAB712CD7F35600DFAC63 /* PortfolioGraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortfolioGraphView.swift; sourceTree = "<group>"; };
+		B7B0E1802CDFACD300E107B0 /* StockCacheService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StockCacheService.swift; sourceTree = "<group>"; };
+		B7B0E1862CDFE6CA00E107B0 /* PortfolioMainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortfolioMainView.swift; sourceTree = "<group>"; };
+		B7B0E18C2CDFE6F400E107B0 /* SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		B7B0E1902CDFE70300E107B0 /* ErrorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		B7B0E1922CDFEA4500E107B0 /* ScrollOffsetPreferenceKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollOffsetPreferenceKey.swift; sourceTree = "<group>"; };
+		B7B0E1982CE0DEFA00E107B0 /* PortfolioToolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortfolioToolbar.swift; sourceTree = "<group>"; };
+		B7B0E19A2CE0E08B00E107B0 /* PortfolioState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortfolioState.swift; sourceTree = "<group>"; };
+		B7B0E19D2CE0E0A900E107B0 /* DateProviding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateProviding.swift; sourceTree = "<group>"; };
+		B7B0E1A22CE0E54800E107B0 /* PortfolioHistory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortfolioHistory.swift; sourceTree = "<group>"; };
+		B7B0E1A42CE0E56500E107B0 /* PortfolioHistoryService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortfolioHistoryService.swift; sourceTree = "<group>"; };
+		B7B0E1A62CE0E95800E107B0 /* Date+Components.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Components.swift"; sourceTree = "<group>"; };
+		B7B0E1A82CE0E9C300E107B0 /* PortfolioGraphViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortfolioGraphViewModel.swift; sourceTree = "<group>"; };
+		B7B0E1AA2CE0F11900E107B0 /* PortfolioRefreshable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortfolioRefreshable.swift; sourceTree = "<group>"; };
+		B7B0E1B22CE0F3C400E107B0 /* PreviewData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewData.swift; sourceTree = "<group>"; };
+		B7B0E1B42CE10CB800E107B0 /* BackgroundTaskService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundTaskService.swift; sourceTree = "<group>"; };
+		B7B0E1B62CE10FC200E107B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +233,7 @@
 		B79FAACB2CD6BF5200DFAC63 /* InvestSight */ = {
 			isa = PBXGroup;
 			children = (
+				B7B0E1B62CE10FC200E107B0 /* Info.plist */,
 				B79FAB212CD6C54900DFAC63 /* App */,
 				B79FAB252CD6C86000DFAC63 /* Features */,
 				B79FAB262CD6C87E00DFAC63 /* Core */,
@@ -196,6 +242,7 @@
 				B79FAACE2CD6BF5200DFAC63 /* ContentView.swift */,
 				B79FAAD02CD6BF5300DFAC63 /* Assets.xcassets */,
 				B79FAAD22CD6BF5300DFAC63 /* Preview Content */,
+				B7B0E1812CDFACD300E107B0 /* Services */,
 			);
 			path = InvestSight;
 			sourceTree = "<group>";
@@ -203,6 +250,7 @@
 		B79FAAD22CD6BF5300DFAC63 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				B7B0E1B22CE0F3C400E107B0 /* PreviewData.swift */,
 				B79FAAD32CD6BF5300DFAC63 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
@@ -267,6 +315,7 @@
 		B79FAB252CD6C86000DFAC63 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				B7B0E18E2CDFE6F400E107B0 /* Settings */,
 				B79FAB5F2CD6E0A900DFAC63 /* Portfolio */,
 			);
 			path = Features;
@@ -275,6 +324,10 @@
 		B79FAB262CD6C87E00DFAC63 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				B7B0E19E2CE0E0A900E107B0 /* Protocols */,
+				B7B0E1942CDFEA4500E107B0 /* Utils */,
+				B79FAB6B2CD7EB4700DFAC63 /* Components */,
+				B79FAB622CD7D9FB00DFAC63 /* Extensions */,
 				B79FAB392CD6D65400DFAC63 /* Domain */,
 			);
 			path = Core;
@@ -332,6 +385,7 @@
 		B79FAB3A2CD6D65A00DFAC63 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				B7B0E1A22CE0E54800E107B0 /* PortfolioHistory.swift */,
 				B79FAB3B2CD6D66E00DFAC63 /* Stock.swift */,
 				B79FAB3D2CD6D68B00DFAC63 /* Portfolio.swift */,
 			);
@@ -389,6 +443,7 @@
 		B79FAB5E2CD6E0A900DFAC63 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				B7B0E1A82CE0E9C300E107B0 /* PortfolioGraphViewModel.swift */,
 				B79FAB5D2CD6E0A900DFAC63 /* PortfolioViewModel.swift */,
 			);
 			path = ViewModels;
@@ -397,9 +452,126 @@
 		B79FAB5F2CD6E0A900DFAC63 /* Portfolio */ = {
 			isa = PBXGroup;
 			children = (
+				B7B0E19B2CE0E08B00E107B0 /* Models */,
+				B79FAB672CD7DA1900DFAC63 /* Views */,
 				B79FAB5E2CD6E0A900DFAC63 /* ViewModels */,
 			);
 			path = Portfolio;
+			sourceTree = "<group>";
+		};
+		B79FAB622CD7D9FB00DFAC63 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B7B0E1A62CE0E95800E107B0 /* Date+Components.swift */,
+				B79FAB612CD7D9FB00DFAC63 /* Color+Hex.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B79FAB662CD7DA1900DFAC63 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				B7B0E18A2CDFE6E000E107B0 /* Navigation */,
+				B79FAB712CD7F35600DFAC63 /* PortfolioGraphView.swift */,
+				B79FAB6F2CD7F34000DFAC63 /* PortfolioHeaderView.swift */,
+				B79FAB642CD7DA1900DFAC63 /* BrokerStatusView.swift */,
+				B79FAB652CD7DA1900DFAC63 /* StockRowView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		B79FAB672CD7DA1900DFAC63 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B7B0E1872CDFE6CA00E107B0 /* Main */,
+				B79FAB6D2CD7EB6E00DFAC63 /* PortfolioContent.swift */,
+				B79FAB662CD7DA1900DFAC63 /* Components */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B79FAB6B2CD7EB4700DFAC63 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				B7B0E1902CDFE70300E107B0 /* ErrorView.swift */,
+				B79FAB6A2CD7EB4700DFAC63 /* RefreshableView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		B7B0E1812CDFACD300E107B0 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				B7B0E1B42CE10CB800E107B0 /* BackgroundTaskService.swift */,
+				B7B0E1A42CE0E56500E107B0 /* PortfolioHistoryService.swift */,
+				B7B0E1802CDFACD300E107B0 /* StockCacheService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		B7B0E1872CDFE6CA00E107B0 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				B7B0E1862CDFE6CA00E107B0 /* PortfolioMainView.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		B7B0E18A2CDFE6E000E107B0 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				B7B0E1982CE0DEFA00E107B0 /* PortfolioToolbar.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		B7B0E18D2CDFE6F400E107B0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B7B0E18C2CDFE6F400E107B0 /* SettingsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B7B0E18E2CDFE6F400E107B0 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				B7B0E18D2CDFE6F400E107B0 /* Views */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		B7B0E1932CDFEA4500E107B0 /* PreferenceKeys */ = {
+			isa = PBXGroup;
+			children = (
+				B7B0E1922CDFEA4500E107B0 /* ScrollOffsetPreferenceKey.swift */,
+			);
+			path = PreferenceKeys;
+			sourceTree = "<group>";
+		};
+		B7B0E1942CDFEA4500E107B0 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				B7B0E1932CDFEA4500E107B0 /* PreferenceKeys */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		B7B0E19B2CE0E08B00E107B0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B7B0E1AA2CE0F11900E107B0 /* PortfolioRefreshable.swift */,
+				B7B0E19A2CE0E08B00E107B0 /* PortfolioState.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B7B0E19E2CE0E0A900E107B0 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				B7B0E19D2CE0E0A900E107B0 /* DateProviding.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -575,23 +747,45 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7B0E1992CE0DEFB00E107B0 /* PortfolioToolbar.swift in Sources */,
+				B7B0E1B52CE10CB800E107B0 /* BackgroundTaskService.swift in Sources */,
+				B79FAB6E2CD7EB6E00DFAC63 /* PortfolioContent.swift in Sources */,
+				B7B0E1B32CE0F3C400E107B0 /* PreviewData.swift in Sources */,
 				B79FAACF2CD6BF5200DFAC63 /* ContentView.swift in Sources */,
 				B79FAB582CD6DDD700DFAC63 /* Trading212Service.swift in Sources */,
+				B7B0E1A92CE0E9C300E107B0 /* PortfolioGraphViewModel.swift in Sources */,
 				B79FAB542CD6DD7600DFAC63 /* APIClient.swift in Sources */,
 				B79FAB602CD6E0A900DFAC63 /* PortfolioViewModel.swift in Sources */,
+				B7B0E1912CDFE70300E107B0 /* ErrorView.swift in Sources */,
 				B79FAB4E2CD6D82A00DFAC63 /* APIConstants.swift in Sources */,
+				B79FAB722CD7F35700DFAC63 /* PortfolioGraphView.swift in Sources */,
 				B79FAB5A2CD6DE2700DFAC63 /* Trading212Endpoint.swift in Sources */,
+				B7B0E1A72CE0E95800E107B0 /* Date+Components.swift in Sources */,
 				B79FAACD2CD6BF5200DFAC63 /* InvestSightApp.swift in Sources */,
 				B79FAB562CD6DD9900DFAC63 /* Endpoint.swift in Sources */,
+				B7B0E1832CDFACD400E107B0 /* StockCacheService.swift in Sources */,
+				B79FAB682CD7DA1A00DFAC63 /* BrokerStatusView.swift in Sources */,
 				B79FAB522CD6DD5200DFAC63 /* Trading212ServiceProtocol.swift in Sources */,
 				B79FAB3C2CD6D66E00DFAC63 /* Stock.swift in Sources */,
+				B79FAB6C2CD7EB4700DFAC63 /* RefreshableView.swift in Sources */,
 				B79FAB4F2CD6D82A00DFAC63 /* APIError.swift in Sources */,
 				B79FAB3E2CD6D68B00DFAC63 /* Portfolio.swift in Sources */,
+				B7B0E1A52CE0E56500E107B0 /* PortfolioHistoryService.swift in Sources */,
+				B79FAB702CD7F34000DFAC63 /* PortfolioHeaderView.swift in Sources */,
 				B79FAB4B2CD6D82A00DFAC63 /* EmptyResponse.swift in Sources */,
 				B79FAB362CD6CFEE00DFAC63 /* T212Stock.swift in Sources */,
 				B79FAB5C2CD6DF2C00DFAC63 /* HTTPMethod.swift in Sources */,
+				B7B0E19C2CE0E08B00E107B0 /* PortfolioState.swift in Sources */,
+				B7B0E1952CDFEA4500E107B0 /* ScrollOffsetPreferenceKey.swift in Sources */,
+				B7B0E18F2CDFE6F400E107B0 /* SettingsView.swift in Sources */,
+				B79FAB692CD7DA1A00DFAC63 /* StockRowView.swift in Sources */,
+				B7B0E1882CDFE6CA00E107B0 /* PortfolioMainView.swift in Sources */,
 				B79FAB382CD6D01100DFAC63 /* T212Portfolio.swift in Sources */,
 				B79FAB242CD6C56E00DFAC63 /* AppContainer.swift in Sources */,
+				B7B0E19F2CE0E0A900E107B0 /* DateProviding.swift in Sources */,
+				B7B0E1AB2CE0F11900E107B0 /* PortfolioRefreshable.swift in Sources */,
+				B79FAB632CD7D9FB00DFAC63 /* Color+Hex.swift in Sources */,
+				B7B0E1A32CE0E54800E107B0 /* PortfolioHistory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -777,11 +971,12 @@
 				DEVELOPMENT_TEAM = NTG9YBGFW2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = InvestSight/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -807,11 +1002,12 @@
 				DEVELOPMENT_TEAM = NTG9YBGFW2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = InvestSight/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
