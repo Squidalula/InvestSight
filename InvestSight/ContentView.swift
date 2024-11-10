@@ -65,6 +65,13 @@ struct ContentView: View {
     }
 }
 
+struct ScrollOffsetPreferenceKey: PreferenceKey {
+    static var defaultValue: CGFloat = 0
+    static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) {
+        value = nextValue()
+    }
+}
+
 #Preview {
     let container = AppContainer()
     return ContentView(viewModel: container.portfolioViewModel, historyService: container.portfolioHistoryService)
