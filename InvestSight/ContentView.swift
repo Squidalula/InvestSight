@@ -8,50 +8,61 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject private var viewModel: PortfolioViewModel
+    @ObservedObject private var viewModel: PortfolioViewModel
+    @State private var scrollOffset: CGFloat = 0
+    @State private var showingSettings = false
+    private let historyService: PortfolioHistoryService
     
-    init(viewModel: PortfolioViewModel) {
-        _viewModel = StateObject(wrappedValue: viewModel)
+    init(viewModel: PortfolioViewModel, historyService: PortfolioHistoryService) {
+        self.viewModel = viewModel
+        self.historyService = historyService
+    }
+    
+    var shouldShowNavValue: Bool {
+        scrollOffset < -150
     }
     
     var body: some View {
-        VStack {
-            if viewModel.isLoading {
-                ProgressView()
-                Text("Loading portfolio...")
-            } else if let portfolio = viewModel.portfolio {
-                Text("Portfolio Value")
-                    .font(.headline)
-                Text("€\(portfolio.totalValue.formatted())")
-                    .font(.title)
-                    .bold()
-                
-                if portfolio.unrealizedProfitLoss >= 0 {
-                    Text("+€\(portfolio.unrealizedProfitLoss.formatted())")
-                        .foregroundColor(.green)
-                } else {
-                    Text("-€\(abs(portfolio.unrealizedProfitLoss).formatted())")
-                        .foregroundColor(.red)
-                }
-            } else if let error = viewModel.error {
-                VStack(spacing: 10) {
-                    Text("Error loading portfolio")
-                        .font(.headline)
-                    Text(error.localizedDescription)
-                        .foregroundColor(.red)
-                }
-            } else {
-                Text("No portfolio data available")
+        NavigationView {
+            RefreshableView {
+                await viewModel.refresh(includeCache: false)
+            } content: {
+                PortfolioMainView(
+                    state: viewModel.state,
+                    shouldHideValue: shouldShowNavValue,
+                    retryAction: { 
+                        Task { 
+                            await viewModel.refresh(includeCache: true)
+                        } 
+                    },
+                    historyService: historyService
+                )
+            }
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                PortfolioToolbar(
+                    showSettings: $showingSettings
+                )
             }
         }
-        .padding()
+        .sheet(isPresented: $showingSettings) {
+            SettingsView()
+                .presentationDetents([.medium])
+        }
+        .onPreferenceChange(ScrollOffsetPreferenceKey.self) { offset in
+            withAnimation(.easeInOut(duration: 0.3)) {
+                scrollOffset = offset
+            }
+        }
         .task {
-            await viewModel.loadPortfolio()
+            if case .idle = viewModel.state {
+                await viewModel.refresh(includeCache: true)
+            }
         }
     }
 }
 
 #Preview {
     let container = AppContainer()
-    return ContentView(viewModel: container.portfolioViewModel)
+    return ContentView(viewModel: container.portfolioViewModel, historyService: container.portfolioHistoryService)
 }
