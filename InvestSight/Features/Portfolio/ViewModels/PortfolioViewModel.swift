@@ -20,7 +20,7 @@ final class PortfolioViewModel: ObservableObject, PortfolioRefreshable {
         self.portfolioHistoryService = portfolioHistoryService
     }
     
-    func refresh(includeCache: Bool) async {
+    public func refresh(includeCache: Bool) async {
         if let lastRefresh = lastRefreshTime,
            Date().timeIntervalSince(lastRefresh) < minimumRefreshInterval {
             return
