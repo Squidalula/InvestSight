@@ -11,6 +11,7 @@ import SwiftUI
 @main
 struct InvestSightWidgetsBundle: WidgetBundle {
     var body: some Widget {
+        StockHeatMapWidget()
         InvestSightWidgets()
         InvestSightWidgetsLiveActivity()
     }

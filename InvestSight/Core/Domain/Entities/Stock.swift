@@ -7,17 +7,35 @@
 
 import Foundation
 
-struct Stock: Equatable {
-    let id: String
-    let symbol: String
-    let averagePrice: Decimal
-    let currentPrice: Decimal
-    let quantity: Decimal
-    let unrealizedProfitLoss: Decimal
-    let purchaseDate: Date
-    let imageURL: URL?
+public struct Stock: Equatable, Identifiable, Codable {
+    public let id: String
+    public let symbol: String
+    public let averagePrice: Decimal
+    public let currentPrice: Decimal
+    public let quantity: Decimal
+    public let unrealizedProfitLoss: Decimal
+    public let purchaseDate: Date
+    public let imageURL: URL?
     
-    static func == (lhs: Stock, rhs: Stock) -> Bool {
+    public init(id: String,
+         symbol: String,
+         averagePrice: Decimal,
+         currentPrice: Decimal,
+         quantity: Decimal,
+         unrealizedProfitLoss: Decimal,
+         purchaseDate: Date,
+         imageURL: URL?) {
+        self.id = id
+        self.symbol = symbol
+        self.averagePrice = averagePrice
+        self.currentPrice = currentPrice
+        self.quantity = quantity
+        self.unrealizedProfitLoss = unrealizedProfitLoss
+        self.purchaseDate = purchaseDate
+        self.imageURL = imageURL
+    }
+    
+    public static func == (lhs: Stock, rhs: Stock) -> Bool {
         return lhs.id == rhs.id &&
                lhs.symbol == rhs.symbol &&
                lhs.averagePrice == rhs.averagePrice &&

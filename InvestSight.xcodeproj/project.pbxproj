@@ -61,6 +61,15 @@
 		B7B0E1AB2CE0F11900E107B0 /* PortfolioRefreshable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B0E1AA2CE0F11900E107B0 /* PortfolioRefreshable.swift */; };
 		B7B0E1B32CE0F3C400E107B0 /* PreviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B0E1B22CE0F3C400E107B0 /* PreviewData.swift */; };
 		B7B0E1B52CE10CB800E107B0 /* BackgroundTaskService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B0E1B42CE10CB800E107B0 /* BackgroundTaskService.swift */; };
+		B7B0E1BB2CE124D400E107B0 /* WidgetContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B0E1BA2CE124D400E107B0 /* WidgetContainer.swift */; };
+		B7B0E1BD2CE125B700E107B0 /* Date+Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B0E1A62CE0E95800E107B0 /* Date+Components.swift */; };
+		B7B0E1C32CE1263800E107B0 /* StockHeatMapProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B0E1BE2CE1263800E107B0 /* StockHeatMapProvider.swift */; };
+		B7B0E1C42CE1263800E107B0 /* StockHeatMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B0E1BF2CE1263800E107B0 /* StockHeatMapView.swift */; };
+		B7B0E1C52CE1263800E107B0 /* StockHeatMapWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B0E1C02CE1263800E107B0 /* StockHeatMapWidget.swift */; };
+		B7B0E1C62CE1280D00E107B0 /* StockHeatMapProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B0E1BE2CE1263800E107B0 /* StockHeatMapProvider.swift */; };
+		B7B0E1C72CE1280F00E107B0 /* StockHeatMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B0E1BF2CE1263800E107B0 /* StockHeatMapView.swift */; };
+		B7B0E1C82CE1281200E107B0 /* StockHeatMapWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B0E1C02CE1263800E107B0 /* StockHeatMapWidget.swift */; };
+		B7B0E1C92CF24CAA00E107B0 /* Color+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79FAB612CD7D9FB00DFAC63 /* Color+Hex.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -159,6 +168,12 @@
 		B7B0E1B22CE0F3C400E107B0 /* PreviewData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewData.swift; sourceTree = "<group>"; };
 		B7B0E1B42CE10CB800E107B0 /* BackgroundTaskService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundTaskService.swift; sourceTree = "<group>"; };
 		B7B0E1B62CE10FC200E107B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		B7B0E1BA2CE124D400E107B0 /* WidgetContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WidgetContainer.swift; sourceTree = "<group>"; };
+		B7B0E1BE2CE1263800E107B0 /* StockHeatMapProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StockHeatMapProvider.swift; sourceTree = "<group>"; };
+		B7B0E1BF2CE1263800E107B0 /* StockHeatMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StockHeatMapView.swift; sourceTree = "<group>"; };
+		B7B0E1C02CE1263800E107B0 /* StockHeatMapWidget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StockHeatMapWidget.swift; sourceTree = "<group>"; };
+		B7CA82D62CF259F4001E6EE9 /* InvestSight.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = InvestSight.entitlements; sourceTree = "<group>"; };
+		B7CA82D72CF25A08001E6EE9 /* InvestSightWidgetsExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = InvestSightWidgetsExtension.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,6 +213,7 @@
 		B79FAAC02CD6BF5200DFAC63 = {
 			isa = PBXGroup;
 			children = (
+				B7CA82D72CF25A08001E6EE9 /* InvestSightWidgetsExtension.entitlements */,
 				B79FAACB2CD6BF5200DFAC63 /* InvestSight */,
 				B79FAADC2CD6BF5300DFAC63 /* InvestSightTests */,
 				B79FAAE62CD6BF5300DFAC63 /* InvestSightUITests */,
@@ -221,6 +237,7 @@
 		B79FAACB2CD6BF5200DFAC63 /* InvestSight */ = {
 			isa = PBXGroup;
 			children = (
+				B7CA82D62CF259F4001E6EE9 /* InvestSight.entitlements */,
 				B7B0E1B62CE10FC200E107B0 /* Info.plist */,
 				B79FAB212CD6C54900DFAC63 /* App */,
 				B79FAB252CD6C86000DFAC63 /* Features */,
@@ -273,6 +290,8 @@
 		B79FAB002CD6BF6600DFAC63 /* InvestSightWidgets */ = {
 			isa = PBXGroup;
 			children = (
+				B7B0E1C22CE1263800E107B0 /* Widgets */,
+				B7B0E1BA2CE124D400E107B0 /* WidgetContainer.swift */,
 				B79FAB012CD6BF6600DFAC63 /* InvestSightWidgetsBundle.swift */,
 				B79FAB032CD6BF6600DFAC63 /* InvestSightWidgetsLiveActivity.swift */,
 				B79FAB052CD6BF6600DFAC63 /* InvestSightWidgets.swift */,
@@ -562,6 +581,24 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		B7B0E1C12CE1263800E107B0 /* StockHeatMap */ = {
+			isa = PBXGroup;
+			children = (
+				B7B0E1BE2CE1263800E107B0 /* StockHeatMapProvider.swift */,
+				B7B0E1BF2CE1263800E107B0 /* StockHeatMapView.swift */,
+				B7B0E1C02CE1263800E107B0 /* StockHeatMapWidget.swift */,
+			);
+			path = StockHeatMap;
+			sourceTree = "<group>";
+		};
+		B7B0E1C22CE1263800E107B0 /* Widgets */ = {
+			isa = PBXGroup;
+			children = (
+				B7B0E1C12CE1263800E107B0 /* StockHeatMap */,
+			);
+			path = Widgets;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -728,18 +765,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7B0E1BB2CE124D400E107B0 /* WidgetContainer.swift in Sources */,
+				B7B0E1C32CE1263800E107B0 /* StockHeatMapProvider.swift in Sources */,
 				B7B0E1992CE0DEFB00E107B0 /* PortfolioToolbar.swift in Sources */,
 				B7B0E1B52CE10CB800E107B0 /* BackgroundTaskService.swift in Sources */,
 				B79FAB6E2CD7EB6E00DFAC63 /* PortfolioContent.swift in Sources */,
 				B7B0E1B32CE0F3C400E107B0 /* PreviewData.swift in Sources */,
 				B79FAACF2CD6BF5200DFAC63 /* ContentView.swift in Sources */,
+				B7B0E1C52CE1263800E107B0 /* StockHeatMapWidget.swift in Sources */,
 				B79FAB582CD6DDD700DFAC63 /* Trading212Service.swift in Sources */,
 				B7B0E1A92CE0E9C300E107B0 /* PortfolioGraphViewModel.swift in Sources */,
 				B79FAB542CD6DD7600DFAC63 /* APIClient.swift in Sources */,
 				B79FAB602CD6E0A900DFAC63 /* PortfolioViewModel.swift in Sources */,
 				B7B0E1912CDFE70300E107B0 /* ErrorView.swift in Sources */,
 				B79FAB4E2CD6D82A00DFAC63 /* APIConstants.swift in Sources */,
-				B79FAB722CD7F35700DFAC63 /* PortfolioGraphView.swift in Sources */,
 				B79FAB722CD7F35700DFAC63 /* PortfolioGraphView.swift in Sources */,
 				B79FAB5A2CD6DE2700DFAC63 /* Trading212Endpoint.swift in Sources */,
 				B7B0E1A72CE0E95800E107B0 /* Date+Components.swift in Sources */,
@@ -750,7 +789,6 @@
 				B79FAB522CD6DD5200DFAC63 /* Trading212ServiceProtocol.swift in Sources */,
 				B79FAB3C2CD6D66E00DFAC63 /* Stock.swift in Sources */,
 				B79FAB6C2CD7EB4700DFAC63 /* RefreshableView.swift in Sources */,
-				B79FAB6C2CD7EB4700DFAC63 /* RefreshableView.swift in Sources */,
 				B79FAB4F2CD6D82A00DFAC63 /* APIError.swift in Sources */,
 				B79FAB3E2CD6D68B00DFAC63 /* Portfolio.swift in Sources */,
 				B7B0E1A52CE0E56500E107B0 /* PortfolioHistoryService.swift in Sources */,
@@ -758,6 +796,7 @@
 				B79FAB4B2CD6D82A00DFAC63 /* EmptyResponse.swift in Sources */,
 				B79FAB362CD6CFEE00DFAC63 /* T212Stock.swift in Sources */,
 				B79FAB5C2CD6DF2C00DFAC63 /* HTTPMethod.swift in Sources */,
+				B7B0E1C42CE1263800E107B0 /* StockHeatMapView.swift in Sources */,
 				B7B0E19C2CE0E08B00E107B0 /* PortfolioState.swift in Sources */,
 				B7B0E1952CDFEA4500E107B0 /* ScrollOffsetPreferenceKey.swift in Sources */,
 				B7B0E18F2CDFE6F400E107B0 /* SettingsView.swift in Sources */,
@@ -794,11 +833,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				B79FAB402CD6D6BD00DFAC63 /* Portfolio.swift in Sources */,
+				B7B0E1C82CE1281200E107B0 /* StockHeatMapWidget.swift in Sources */,
+				B7B0E1C72CE1280F00E107B0 /* StockHeatMapView.swift in Sources */,
 				B79FAB022CD6BF6600DFAC63 /* InvestSightWidgetsBundle.swift in Sources */,
 				B79FAB082CD6BF6600DFAC63 /* AppIntent.swift in Sources */,
 				B79FAB042CD6BF6600DFAC63 /* InvestSightWidgetsLiveActivity.swift in Sources */,
 				B79FAB3F2CD6D6BB00DFAC63 /* Stock.swift in Sources */,
+				B7B0E1C62CE1280D00E107B0 /* StockHeatMapProvider.swift in Sources */,
 				B79FAB062CD6BF6600DFAC63 /* InvestSightWidgets.swift in Sources */,
+				B7B0E1C92CF24CAA00E107B0 /* Color+Hex.swift in Sources */,
+				B7B0E1BD2CE125B700E107B0 /* Date+Components.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -948,6 +992,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = InvestSight/InvestSight.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"InvestSight/Preview Content\"";
@@ -979,6 +1024,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = InvestSight/InvestSight.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"InvestSight/Preview Content\"";
@@ -1085,6 +1131,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = InvestSightWidgetsExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = NTG9YBGFW2;
@@ -1098,7 +1145,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = co.tiagoafonso.InvestSight.InvestSightWidgets;
+				PRODUCT_BUNDLE_IDENTIFIER = co.tiagoafonso.InvestSight.Widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1112,6 +1159,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = InvestSightWidgetsExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = NTG9YBGFW2;
@@ -1125,7 +1173,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = co.tiagoafonso.InvestSight.InvestSightWidgets;
+				PRODUCT_BUNDLE_IDENTIFIER = co.tiagoafonso.InvestSight.Widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
