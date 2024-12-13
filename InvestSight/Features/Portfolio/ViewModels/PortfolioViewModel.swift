@@ -60,6 +60,8 @@ final class PortfolioViewModel: ObservableObject, PortfolioRefreshable {
                 let domainPortfolio = t212Portfolio.toDomain(with: stocks)
                 await portfolioHistoryService.addEntry(from: domainPortfolio)
                 
+                saveStocksForWidget(stocks)
+                
                 state = .loaded(domainPortfolio)
                 lastRefreshTime = Date()
             } catch {
@@ -75,7 +77,6 @@ final class PortfolioViewModel: ObservableObject, PortfolioRefreshable {
     private func getStocksFromCache(for t212Portfolio: T212Portfolio) async -> [Stock] {
         var cachedStocks: [Stock] = []
         
-        // Get stocks from the T212 service directly
         let t212Stocks = try? await trading212Service.fetchStocks()
         guard let stocks = t212Stocks else { return [] }
         
@@ -122,5 +123,22 @@ final class PortfolioViewModel: ObservableObject, PortfolioRefreshable {
         }
         
         throw lastError ?? NSError(domain: "PortfolioViewModel", code: -1, userInfo: nil)
+    }
+    
+    private func saveStocksForWidget(_ stocks: [Stock]) {
+        let userDefaults = UserDefaults(suiteName: "group.co.tiagoafonso.InvestSight")
+        if let encoded = try? JSONEncoder().encode(stocks) {
+            userDefaults?.set(encoded, forKey: "widget_stocks")
+            print("Successfully saved \(stocks.count) stocks to widget storage")
+            
+            if let savedData = userDefaults?.data(forKey: "widget_stocks"),
+               let decodedStocks = try? JSONDecoder().decode([Stock].self, from: savedData) {
+                print("Verified saved data: Found \(decodedStocks.count) stocks")
+            } else {
+                print("Failed to verify saved data")
+            }
+        } else {
+            print("Failed to encode stocks for widget")
+        }
     }
 } 
