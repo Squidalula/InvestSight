@@ -5,5 +5,5 @@ struct APIConstants {
     static let cashAccountPath = "/equity/account/cash"
     static let portfolioPath = "/equity/portfolio"
     static let accountMetadata = "/equity/account/info"
-    static let authToken = "22972963ZSBTXrtviTiYophqUvIXnwHhwfshb"
+    static let authToken = "apikey"
 }
